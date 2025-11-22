@@ -1,0 +1,28 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch Extension (Chrome)",
+			"type": "pwa-chrome",
+			"request": "launch",
+			"runtimeExecutable": "chrome",
+			"runtimeArgs": [
+				"--remote-debugging-port=9222",
+				"--load-extension=${workspaceFolder}/dev",
+				"--user-data-dir=${workspaceFolder}/.chrome-debug-profile",
+				"about:blank"
+			],
+			"webRoot": "${workspaceFolder}/src",
+			"sourceMaps": true,
+			"preLaunchTask": "npm: dev:chrome"
+		},
+		{
+			"name": "Attach Chrome (9222)",
+			"type": "pwa-chrome",
+			"request": "attach",
+			"port": 9222,
+			"webRoot": "${workspaceFolder}/src",
+			"sourceMaps": true
+		}
+	]
+}

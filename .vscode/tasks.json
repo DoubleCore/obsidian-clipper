@@ -1,0 +1,31 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "npm: dev:chrome",
+			"type": "npm",
+			"script": "dev:chrome",
+			"isBackground": true,
+			"group": "build",
+			"problemMatcher": {
+				"owner": "custom",
+				"pattern": [
+					{
+						"regexp": ".*"
+					}
+				],
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": ".*",
+					"endsPattern": "^\\s*$"
+				}
+			}
+		},
+		{
+			"label": "Launch Chrome with extension (9222)",
+			"type": "shell",
+			"command": "chrome --remote-debugging-port=9222 --load-extension=${workspaceFolder}/dev --user-data-dir=${workspaceFolder}/.chrome-debug-profile about:blank",
+			"problemMatcher": []
+		}
+	]
+}

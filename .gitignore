@@ -1,5 +1,6 @@
 .DS_Store
-
+.chrome-debug-profile
+.edge-debug-profile
 # NPM
 node_modules/
 
